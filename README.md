@@ -2,6 +2,21 @@
 
 Diverse
 
+## Just Run the Thing
+
+In case everything necessary is installed, this will hopefuylly run the code.
+
+```sh
+cd ~/git/python     # Or where you clone the repo
+source env/bin/activate
+cd git/python
+podman run --rm -v $PWD:/srv:z -p 8000:8000 --name fastapi -d fastapi
+firefox localhost:8000
+# when done
+podman stop fastapi
+deactivate
+```
+
 ## Types
 
 [Built in types](https://docs.python.org/3/library/stdtypes.html)

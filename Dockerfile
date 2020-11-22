@@ -1,4 +1,4 @@
-FROM fedora:64
+FROM fedora:32
 RUN dnf install -y python-pip \
     && dnf clean all \
     && pip install fastapi uvicorn aiofiles
