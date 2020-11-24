@@ -41,7 +41,7 @@ class Rectangle:
     side1: float = 0.0
     side2: float = 0.0
     
-    def rectangleInput(self):
+    async def rectangleInput(self):
         self.side1 = float(input("Input the first side of two: "))
         self.side2 = float(input("Input the first side of two: "))
         self.name = str("Rectangle")
@@ -60,10 +60,20 @@ async def root_post():
 async def read_item(id: int):
    return {"item_id": id}
 
+async def printCircle(circle):
+    print(circle)
+    print(Circle.diameterCalculations(circle))
+
+#prepare_for_foo()
+#task = loop.create_task(foo())
+#remaining_work_not_depends_on_foo()
+#loop.run_until_complete(task)
+
+loop = asyncio.get_event_loop()
+
 async def main():
-    c = Circle('a', 33.0)
-    print(c)
-    #print(Circle.diameterCalculations(c))
+    c = Circle('a', 33.0)   # This must finish before print.
+    printCircle(c)          # https://www.python.org/dev/peps/pep-0492/#types-coroutine
 
 if __name__ == "__main__":
     asyncio.run(main())

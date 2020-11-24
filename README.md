@@ -9,7 +9,7 @@ In case everything necessary is installed, this will hopefuylly run the code.
 ```sh
 cd ~/git/python     # Or where you clone the repo
 source env/bin/activate
-cd git/python
+pip install -r requirements.txt
 podman run --rm -v $PWD:/srv:z -p 8000:8000 --name fastapi -d fastapi
 firefox localhost:8000
 # when done
