@@ -17,12 +17,22 @@ podman stop fastapi
 deactivate
 ```
 
+## Available URL:s
+
+Once the app is up and running the following URI:s should be available:
+
+* [Main site](http://localhost:8000/)
+* [Automatic interactive API documentation](http://localhost:8000/docs)
+* [Alternative automatic interactive API documentation](http://localhost:8000/redoc)
+* [The raw OpenAPI schema as JSON](http://localhost:8000/openapi.json   )
+
 ## Types
 
-[Built in types](https://docs.python.org/3/library/stdtypes.html)
-Python Tutorial
+* [Built in types](https://docs.python.org/3/library/stdtypes.html)
+* [Python Type Tutorial](https://realpython.com/python-type-checking/)
+* [Python Type Checking Guide](https://realpython.com/python-type-checking/)
 
-## List of some different variable types
+## List of Some Different Variable Types
 
 ```python
 x = 123      # integer
@@ -47,7 +57,7 @@ From [Stack Overflow](https://stackoverflow.com/a/1027730):
 >>> exec(Path("filename.py").read_text())
 ```
 
-### Create virtual enviroment from existing project
+### Create a Virtual Enviroment From an Existing Project
 
 Adapted from [Stack Overflow](https://stackoverflow.com/a/41746628) to work on Ubuntu.
 Make sure you make a copy of your project or commit everything to a version control system

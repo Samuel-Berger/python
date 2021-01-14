@@ -8,7 +8,7 @@ from pydantic.dataclasses import dataclass
 
 app = FastAPI()
 
-#https://docs.python.org/3/library/math.html
+# https://docs.python.org/3/library/math.html
 from math import pi, sqrt
 
 #import os
@@ -31,7 +31,7 @@ class Circle:
         self.radius = float(self.diameter /2)
         self.area = float(pi * sqrt(self.radius))
         self.circumference = float(2 * pi * self.radius)
-        #print("Radius ", self.radius)
+        print("Radius ", self.radius)
         #print("Area: ", self.area)
         #print("Circumference: ", self.circumference)
 
@@ -56,24 +56,29 @@ async def root_get():
 async def root_post():
     return {"message": "All your POST is belong to us."}
 
-@app.post("/circle/{id}")
-async def read_item(id: int):
-   return {"item_id": id}
-
-async def printCircle(circle):
-    print(circle)
-    print(Circle.diameterCalculations(circle))
+# GET request for /circle.
+@app.get("/circle/{id}")
+async def post_item(id: str):
+    Circle(2)
 
 #prepare_for_foo()
 #task = loop.create_task(foo())
 #remaining_work_not_depends_on_foo()
 #loop.run_until_complete(task)
 
-loop = asyncio.get_event_loop()
+##loop = asyncio.get_event_loop()
 
-async def main():
+def main():
     c = Circle('a', 33.0)   # This must finish before print.
-    printCircle(c)          # https://www.python.org/dev/peps/pep-0492/#types-coroutine
+#    printCircle(c)          # https://www.python.org/dev/peps/pep-0492/#types-coroutine
+#    print(circle)
+    print(Circle.diameterCalculations(c))
 
-if __name__ == "__main__":
-    asyncio.run(main())
+
+#if __name__ == "__main__":
+#    asyncio.run(main())
+
+
+def adder(i1, i2):
+  #return i1 + i2
+  return i1 + i2
